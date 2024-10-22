@@ -1,0 +1,306 @@
+﻿Librería el mundo de Sofía
+(Filtro introducción al Backend)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yessica Andrea Perez Machuca 
+Grupo: T2
+Presentado a: Pedro Felipe Gómez Bonilla
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Campuslands
+Salon: T2 SandBox
+Ruta Java
+Tibú
+2024
+Tabla de contenido
+
+
+
+
+Introducción        4
+Caso de Estudio        5
+Planificación        5
+Construcción del Modelo Conceptual        5
+Descripción        5
+Gráfica        5
+Descripción Técnica        6
+Construcción del Modelo Lógico        6
+Descripción        6
+Gráfica        6
+Descripción Técnica        6
+Normalización del Modelo Lógico        6
+Primera Forma Normal (1FN)        7
+Descripción        7
+Gráfica        7
+Descripción Técnica        7
+Segunda Forma Normal (2FN)        7
+Descripción        8
+Gráfica        8
+Descripción Técnica        8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introducción
+En este caso vamos a mirar y a trabajar en una base de datos de una librería la cual se llama librería el mundo de Sofía, será un informe en cual podrás encontrar diferentes puntos como diagramas de flujo (modelo conceptual), tablas (modelo lógico), una documentación del diseño de la base de datos por último un SQL Script el cual es una estructura de la creación de las tablas y las restricciones.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Caso de Estudio
+Diseñar una base de datos para una tienda de libros que gestione el inventario, ventas y clientes. La base de datos debe permitir el registro y gestión de libros, autores, clientes, pedidos y transacciones de compra. Debes crear un diagrama UML E-R que represente la estructura de la base de datos y entregar una documentación detallada que explique las decisiones de diseño, las relaciones entre las tablas y las restricciones impuestas.
+
+
+
+
+
+
+Planificación
+
+
+Construcción del Modelo Conceptual
+En el modelo conceptual tenemos las entidades, atributos y verbos, los cuales son esenciales para poder entender cómo funciona nuestra base de datos, tenemos 6 entidades, 26 atributos y 7 verbos que nos ayudan a relacionar las entidades.
+
+
+
+
+Descripción
+La base de datos debe de contar con distintos campos donde puedan manejar los libros, autores, clientes, pedidos, transacciones y por último reservas todo esto está realizado en nuestro modelo conceptual y relacionado con las entidades que deben de ir relacionados, tenemos un campo donde el cliente puede hacer una reserva de un libro también donde puede hacer transacciones y pedidos de los libros que desea. 
+
+
+
+
+Gráfica
+  
+
+Descripción Técnica
+En nuestra base de datos tenemos distintas relaciones las cuales son: 
+* Un autor hace muchos libros.
+* Un libro tiene muchos clientes.
+* Un cliente hace muchos pedidos.
+* Muchos pedidos tienen muchas transacciones.
+* Un cliente hace una transacción.
+* Un libro tiene muchas reservas.
+* Un libro tiene muchos pedidos.
+
+
+Construcción del Modelo Lógico
+El modelo lógico es el segundo paso del desarrollo de la base de datos ya que debemos pasar lo que tenemos en el modelo conceptual al modelo lógico ya explicando las relaciones y como funcionan entre ellas.
+
+
+Descripción
+En el modelo lógico contamos con las tablas, las cuales cuentan con entidades, atributos y relaciones en algunos casos existen entidades que tienen relaciones de unos a muchos, muchos a uno y de muchos a muchos.
+
+
+Gráfica
+  
+
+
+
+Descripción Técnica
+En este modelo contamos con tablas las cuales se relacionan entre ellas y son necesarias dichas relaciones para que el usuario final pueda entender como funciona nuestra base de datos y la pueda ejecutar cuando la necesite:
+
+
+* Autor y Libros va de 1:N porque un autor puede hacer muchos libros.
+* Libro y Cliente va de 1:N porque un libro puede tener muchos clientes.
+* Cliente y Pedidos va de 1:N porque un cliente puede hacer muchos pedidos.
+* Pedidos y Transacciones va de N:M porque un pedido puede tener muchas transacciones.
+* Cliente y Transacciones va de 1:N porque un cliente puede hacer una transacción.
+* Libro y Reservas va de 1:N porque un libro puede tener muchas reservas.
+* Libro Pedidos va de 1:N porque un libro puede ser pedido muchas veces.
+
+
+
+
+Normalización del Modelo Lógico
+La normalización es donde hacemos más específicos los datos que tenemos en el modelo conceptual así también como en el modelo lógico.
+
+
+Primera Forma Normal (1FN)
+Descripción
+En la primera forma normal contamos con una tabla la cual está sin normalizar y otras dos las cuales ya pertenecen a la primera forma normal.
+
+
+Gráfica
+
+
+  
+
+
+
+  
+
+
+
+  
+
+Descripción Técnica
+En la primera tabla la cual está sin normalizar tenemos nombre de cliente, nombre de autor y libro reservado. En la segunda tabla tenemos solo dos apartados los cuales son Libro reservado y nombre del cliente esto es por que necesitamos saber el nombre del libro y el nombre del cliente que reservó el libro para así añadirlo a la base de datos, y en la última tabla tenemos dos apartados los cuales son idcliente y nombre cliente esto es porque es más fácil y entendible a la hora de que el usuario final lo vaya a ejecutar.
+
+
+
+
+Segunda Forma Normal (2FN)
+
+
+Descripción
+En la segunda forma normal contamos con dos tablas las cuales ya pertenecen a la segunda forma normal porque son aquella que ya tiene las claves necesarias para poder tener relación con las demás tablas necesarias.
+
+
+Gráfica
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+Descripción Técnica
+En la primera tabla podemos ver que tenemos tres campos los cuales son idcliente, nombre libro y nombre del autor esto es porque con el id del cliente podremos ver qué libros tiene reservados y los autores de dichos libros así se le facilita la búsqueda en la base de datos a el usuario final, en la segunda tabla podemos observar también tres campos los cuales son nombre del libro, editorial y fecha de publicación esto es porque los clientes pueden observar en el año fue publicado el libro y el autor que lo creo si así lo desea.
